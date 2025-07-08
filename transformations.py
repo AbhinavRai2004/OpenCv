@@ -58,15 +58,20 @@ rotated_img90 = rotate(img,90)
 cv.imshow('Rotated', rotated_img90)
 
 
-# Resizing
+# Resize the image to a specific size
+# You can also use interpolation methods like INTER_LINEAR, INTER_CUBIC, etc.
+# linear method is faster but less accurate, cubic is slower but more accurate
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
 
-# Flipping
+# Flip the image horizontally, vertically, or both
+# -1 for both, 0 for vertical, 1 for horizontal
 flip = cv.flip(img, -1)
 cv.imshow('Flip', flip)
 
-# Cropping
+# Cropping the image
+# img[y1:y2, x1:x2]
+# y1, y2 are the row indices (height)
 cropped = img[200:400, 300:400]
 cv.imshow('Cropped', cropped)
 
